@@ -10,6 +10,6 @@ public class CameraOperated : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+	    
 	}
 }
