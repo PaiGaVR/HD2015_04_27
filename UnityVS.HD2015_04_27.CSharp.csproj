@@ -56,5 +56,16 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\CameraOperated3D.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Resources\Shaders\MatCap_Lit.shader" />
+    <None Include="Assets\Resources\Shaders\MatCap_Plain.shader" />
+    <None Include="Assets\Resources\Shaders\MatCap_Plain_Additive.shader" />
+    <None Include="Assets\Resources\Shaders\MatCap_Plain_AdditiveZ.shader" />
+    <None Include="Assets\Resources\Shaders\MatCap_Plain_Bumped.shader" />
+    <None Include="Assets\Resources\Shaders\MatCap_TextureAdd.shader" />
+    <None Include="Assets\Resources\Shaders\MatCap_TextureAdd_Bumped.shader" />
+    <None Include="Assets\Resources\Shaders\MatCap_TextureMult.shader" />
+    <None Include="Assets\Resources\Shaders\MatCap_TextureMult_Bumped.shader" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2013\UnityVS.CSharp.targets" />
 </Project>

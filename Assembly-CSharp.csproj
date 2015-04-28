@@ -47,6 +47,15 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\CameraOperated3D.cs" />
+     <None Include="Assets\Resources\Shaders\MatCap_TextureAdd_Bumped.shader" />
+     <None Include="Assets\Resources\Shaders\MatCap_TextureMult_Bumped.shader" />
+     <None Include="Assets\Resources\Shaders\MatCap_Lit.shader" />
+     <None Include="Assets\Resources\Shaders\MatCap_Plain_Bumped.shader" />
+     <None Include="Assets\Resources\Shaders\MatCap_Plain_AdditiveZ.shader" />
+     <None Include="Assets\Resources\Shaders\MatCap_Plain.shader" />
+     <None Include="Assets\Resources\Shaders\MatCap_Plain_Additive.shader" />
+     <None Include="Assets\Resources\Shaders\MatCap_TextureMult.shader" />
+     <None Include="Assets\Resources\Shaders\MatCap_TextureAdd.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity4.6.1/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>
