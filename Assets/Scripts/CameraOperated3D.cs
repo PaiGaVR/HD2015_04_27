@@ -3,14 +3,39 @@ using System.Collections;
 
 public class CameraOperated3D : MonoBehaviour {
 
+    /// <summary>
+    /// 目标物体
+    /// </summary>
     public GameObject target;
+
+    /// <summary>
+    /// 目标点
+    /// </summary>
     private Vector3 targetVector3 = Vector3.zero;
 
+    /// <summary>
+    /// 场景缩放的默认值
+    /// </summary>
     private float normalDistance = 60f;
+
+    /// <summary>
+    /// 场景缩放的最小值
+    /// </summary>
     private float MouseZoomMin = 20f;
+
+    /// <summary>
+    /// 场景缩放的最大值
+    /// </summary>
     private float MouseZoomMax = 100f;
+
+    /// <summary>
+    /// 鼠标滑轮的灵敏程度
+    /// </summary>
     private float MouseWheelSensitivity = 15f;
 
+    /// <summary>
+    /// 场景旋转在X上的灵敏程度
+    /// </summary>
     private const float X_SPEED = 250.0f;
     private const float Y_SPEED = 120.0f;
     private float x = 0.0f;
