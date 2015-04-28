@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// 场景相机的控制脚本
+/// </summary>
 public class CameraOperated3D : MonoBehaviour {
 
     /// <summary>
@@ -105,6 +108,7 @@ public class CameraOperated3D : MonoBehaviour {
     /// 用来辅助计算旋转惯性的变量
     /// </summary>
     private Vector2 gradualVector2;
+
     public void Update()
     {
         // 惯性旋转计算
