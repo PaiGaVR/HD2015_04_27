@@ -28,7 +28,7 @@ public class CameraOperated3D : MonoBehaviour {
         Vector3 rotateVector3 = transform.rotation.eulerAngles;
         x = rotateVector3.y;
         y = rotateVector3.x;
-        RotatedCamera(y, x, 0, distance);
+        RotatedCamera(transform, y, x, 0, distance, targetVector3);
 
         normalDistance = transform.camera.fieldOfView;
     }
@@ -44,7 +44,7 @@ public class CameraOperated3D : MonoBehaviour {
             flag += Time.deltaTime * gradualSpeed;
             gradualVector2 = Vector2.Lerp(gradualVector2, Vector2.zero, flag);
             x += gradualVector2.x;
-            RotatedCamera(y, x, 0, distance);
+            RotatedCamera(transform, y, x, 0, distance, targetVector3);
         }
 
         // 旋转
@@ -56,7 +56,7 @@ public class CameraOperated3D : MonoBehaviour {
 
             y = ClampAngle(y, yMinLimit, yMaxLimit);
 
-            RotatedCamera(y, x, 0, distance);
+            RotatedCamera(transform, y, x, 0, distance, targetVector3);
 
             if (Mathf.Abs(axisX) > 10f)
             {
@@ -72,19 +72,12 @@ public class CameraOperated3D : MonoBehaviour {
 
             transform.camera.fieldOfView = normalDistance;
         }
-
     }
 
-    private Vector2 axisVector2;
-    private void RotatedCameraGradual(float axisX, float axisY)
+    static void RotatedCamera(Transform cameraTransform, float x, float y, float z, float distance, Vector3 target)
     {
-        axisVector2 = new Vector2(axisX, axisY);
-    }
-
-    private void RotatedCamera(float x, float y, float z, float distance)
-    {
-        transform.rotation = Quaternion.Euler(new Vector3(x, y, z));
-        transform.position = transform.rotation * new Vector3(0.0f, 0.0f, -distance) + targetVector3;
+        cameraTransform.rotation = Quaternion.Euler(new Vector3(x, y, z));
+        cameraTransform.position = cameraTransform.rotation * new Vector3(0.0f, 0.0f, -distance) + target;
     }
 
     static float ClampAngle(float angle, float min, float max)
