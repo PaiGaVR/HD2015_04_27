@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\CameraOperated3D.cs" />
+    <Compile Include="Assets\Scripts\Disperse.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\Shaders\MatCap_Lit.shader" />
