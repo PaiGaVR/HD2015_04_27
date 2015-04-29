@@ -46,7 +46,8 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\CameraOperated.cs" />
+     <Compile Include="Assets\Scripts\CameraOperated3D.cs" />
+     <Compile Include="Assets\Scripts\Disperse.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>E:/HY Program/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>
