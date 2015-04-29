@@ -21,9 +21,12 @@ public class NewBehaviourScript : MonoBehaviour {
                 {
                     count++;
                     Debug.Log("before" + trans.localPosition);
-                    trans.localPosition = new Vector3(Mathf.Lerp(trans.localPosition.x, (float)Math.Pow(-1,count), Time.time),
-                        Mathf.Lerp(trans.localPosition.y, trans.localPosition.y * 2f , Time.time),
-                        Mathf.Lerp(trans.localPosition.z, trans.localPosition.y * 2f , Time.time));
+                    Vector3 VEC = trans.localPosition;
+                    Vector3 NEWVEC = new Vector3((float)Math.Pow(-1, count), VEC.y * 2f, VEC.z *2f);
+                    Debug.Log("NEWVEC" + NEWVEC);
+                    trans.localPosition = new Vector3(Mathf.Lerp(trans.localPosition.x, NEWVEC.x, Time.time),
+                        Mathf.Lerp(trans.localPosition.y, NEWVEC.y, Time.time),
+                        Mathf.Lerp(trans.localPosition.z, NEWVEC.z, Time.time));
                     Debug.Log("later" + trans.localPosition);
                 }
                 count = 0;
