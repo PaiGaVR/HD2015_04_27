@@ -14,6 +14,6 @@ public interface ZoomTargetEvent {
     /// <summary>
     /// 相机指出目标点
     /// </summary>
-    void ZoonOutTarget(ref Transform parent);
+    void ZoomOutTarget(ref Transform parent);
 	
 }

@@ -179,7 +179,7 @@ public class CameraOperated3D : MonoBehaviour
             else if (newTarget.parent != null && !"Scane".Equals(newTarget.parent.name))
             {
                 newTarget = newTarget.parent;
-                zoomTargetEvent.ZoonOutTarget(ref newTarget);
+                zoomTargetEvent.ZoomOutTarget(ref newTarget);
                 cameraMoveFlag = 0f;
             }
             mouseDoubleClick = false;
