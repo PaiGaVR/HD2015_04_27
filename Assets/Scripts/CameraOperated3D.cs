@@ -74,7 +74,11 @@ public class CameraOperated3D : MonoBehaviour {
     public void Start()
     {
         // 获取目标点
-        if (target != null) targetVector3 = target.transform.position;
+        if (target != null)
+        {
+            targetVector3 = target.transform.position;
+            newTarget = target.transform;
+        }
 
         // 获取相机与目标点的距离
         distance = Vector3.Distance(transform.position, targetVector3);
@@ -97,7 +101,7 @@ public class CameraOperated3D : MonoBehaviour {
     /// <summary>
     /// 旋转惯性的控制变量
     /// </summary>
-    private float flag = 1f;
+    private float cameraRotatedFlag = 1f;
 
     /// <summary>
     /// 旋转惯性的控制变量变化速度
@@ -109,15 +113,65 @@ public class CameraOperated3D : MonoBehaviour {
     /// </summary>
     private Vector2 gradualVector2;
 
+    /// <summary>
+    /// 相机中的鼠标位置碰撞点
+    /// </summary>
+    private RaycastHit cameraHit;
+
+    /// <summary>
+    /// 移动惯性的控制变量
+    /// </summary>
+    private float cameraMoveFlag = 1f;
+
+    /// <summary>
+    /// 相机的新目标点
+    /// </summary>
+    private Transform newTarget;
+
+    /// <summary>
+    /// 用来辅助计算移动惯性的变量
+    /// </summary>
+    private float gradualMoveSpeed = 2f;
+
     public void Update()
     {
         // 惯性旋转计算
-        if (flag < 1f)
+        if (cameraRotatedFlag < 1f)
         {
-            flag += Time.deltaTime * gradualSpeed;
-            gradualVector2 = Vector2.Lerp(gradualVector2, Vector2.zero, flag);
+            cameraRotatedFlag += Time.deltaTime * gradualSpeed;
+            gradualVector2 = Vector2.Lerp(gradualVector2, Vector2.zero, cameraRotatedFlag);
             x += gradualVector2.x;
             RotatedCamera(transform, y, x, 0, distance, targetVector3);
+        }
+
+        // 相机目标点移动的计算
+        if (cameraMoveFlag < 1f)
+        {
+            cameraMoveFlag += Time.deltaTime * gradualMoveSpeed;
+            targetVector3 = Vector3.Lerp(targetVector3, newTarget.position, cameraMoveFlag);
+
+            // 场景的旋转变化
+            Vector3 rotateVector3 = transform.rotation.eulerAngles;
+            x = rotateVector3.y;
+            y = rotateVector3.x;
+            RotatedCamera(transform, y, x, 0, distance, targetVector3);
+        }
+
+        // 鼠标双击事件
+        if (mouseDoubleClick)
+        {
+            // 如果获取到碰撞物体，则相机目标物体指向该碰撞物体；否则，相机目标物体指向父物体
+            if (Physics.Raycast(transform.camera.ScreenPointToRay(Input.mousePosition), out cameraHit))
+            {
+                newTarget = cameraHit.transform;
+                cameraMoveFlag = 0f;
+            }
+            else if (newTarget.parent != null && !"Scane".Equals(newTarget.parent.name))
+            {
+                newTarget = newTarget.parent;
+                cameraMoveFlag = 0f;
+            }
+            mouseDoubleClick = false;
         }
 
         // 场景旋转
@@ -133,7 +187,7 @@ public class CameraOperated3D : MonoBehaviour {
 
             if (Mathf.Abs(axisX) > 10f)
             {
-                flag = 0f;
+                cameraRotatedFlag = 0f;
                 gradualVector2 = new Vector2(axisX, 0f);
             }
         }
@@ -176,5 +230,24 @@ public class CameraOperated3D : MonoBehaviour {
         if (angle > 360)
             angle -= 360;
         return Mathf.Clamp(angle, min, max);
+    }
+
+    /// <summary>
+    /// 鼠标双击事件控制变量
+    /// </summary>
+    private bool mouseDoubleClick = false;
+
+    /// <summary>
+    /// 用来记录事件
+    /// </summary>
+    private Event mouseEvent;
+    public void OnGUI()
+    {
+        mouseEvent = Event.current;
+
+        if (mouseEvent.isMouse && mouseEvent.type == EventType.MouseDown && mouseEvent.clickCount == 2)
+        {
+            mouseDoubleClick = true;
+        }
     }
 }

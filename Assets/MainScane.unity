@@ -116,7 +116,7 @@ GameObject:
   - 65: {fileID: 108053451}
   - 23: {fileID: 108053450}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Cube01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -133,7 +133,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 702549107}
-  m_RootOrder: 3
+  m_RootOrder: 0
 --- !u!23 &108053450
 Renderer:
   m_ObjectHideFlags: 0
@@ -185,7 +185,7 @@ GameObject:
   - 65: {fileID: 242953196}
   - 23: {fileID: 242953195}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Cube02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -202,7 +202,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 702549107}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!23 &242953195
 Renderer:
   m_ObjectHideFlags: 0
@@ -314,7 +314,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 702549107}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Parent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -330,10 +330,10 @@ Transform:
   m_LocalPosition: {x: .178114414, y: .202987432, z: -.485396862}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 108053449}
+  - {fileID: 242953194}
   - {fileID: 1127573253}
   - {fileID: 861778163}
-  - {fileID: 242953194}
-  - {fileID: 108053449}
   m_Father: {fileID: 89882627}
   m_RootOrder: 2
 --- !u!1 &861778162
@@ -348,7 +348,7 @@ GameObject:
   - 65: {fileID: 861778165}
   - 23: {fileID: 861778164}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Cube04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -365,7 +365,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 702549107}
-  m_RootOrder: 1
+  m_RootOrder: 3
 --- !u!23 &861778164
 Renderer:
   m_ObjectHideFlags: 0
@@ -417,7 +417,7 @@ GameObject:
   - 65: {fileID: 1127573251}
   - 23: {fileID: 1127573250}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Cube03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -473,7 +473,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 702549107}
-  m_RootOrder: 0
+  m_RootOrder: 2
 --- !u!1 &1912291066
 GameObject:
   m_ObjectHideFlags: 0
