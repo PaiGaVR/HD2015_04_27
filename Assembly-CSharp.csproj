@@ -183,6 +183,7 @@
      <Compile Include="Assets\NGUI\Scripts\UI\UIViewport.cs" />
      <Compile Include="Assets\Scripts\CameraOperated3D.cs" />
      <Compile Include="Assets\Scripts\Disperse.cs" />
+     <Compile Include="Assets\Scripts\ZoomTargetEvent.cs" />
      <None Include="Assets\NGUI\Examples\Shaders\Unlit - Depth Cutout.shader" />
      <None Include="Assets\NGUI\ReadMe - 3.7.8.txt" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text 2.shader" />

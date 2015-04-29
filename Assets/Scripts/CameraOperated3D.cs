@@ -4,12 +4,18 @@ using System.Collections;
 /// <summary>
 /// 场景相机的控制脚本
 /// </summary>
-public class CameraOperated3D : MonoBehaviour {
+public class CameraOperated3D : MonoBehaviour
+{
 
     /// <summary>
     /// 目标物体
     /// </summary>
     public GameObject target;
+
+    /// <summary>
+    /// 当相机目标点指向或指出该物体时，调用的事件
+    /// </summary>
+    private ZoomTargetEvent zoomTargetEvent;
 
     /// <summary>
     /// 目标点
@@ -135,6 +141,9 @@ public class CameraOperated3D : MonoBehaviour {
 
     public void Update()
     {
+
+#if UNITY_STANDALONE_WIN
+
         // 惯性旋转计算
         if (cameraRotatedFlag < 1f)
         {
@@ -164,11 +173,13 @@ public class CameraOperated3D : MonoBehaviour {
             if (Physics.Raycast(transform.camera.ScreenPointToRay(Input.mousePosition), out cameraHit))
             {
                 newTarget = cameraHit.transform;
+                zoomTargetEvent.ZoomInTarget(ref newTarget);
                 cameraMoveFlag = 0f;
             }
             else if (newTarget.parent != null && !"Scane".Equals(newTarget.parent.name))
             {
                 newTarget = newTarget.parent;
+                zoomTargetEvent.ZoonOutTarget(ref newTarget);
                 cameraMoveFlag = 0f;
             }
             mouseDoubleClick = false;
@@ -199,6 +210,9 @@ public class CameraOperated3D : MonoBehaviour {
 
             transform.camera.fieldOfView = normalDistance;
         }
+# elif UNITY_ANDROID
+
+# endif
     }
 
     /// <summary>
@@ -241,13 +255,36 @@ public class CameraOperated3D : MonoBehaviour {
     /// 用来记录事件
     /// </summary>
     private Event mouseEvent;
+
     public void OnGUI()
     {
         mouseEvent = Event.current;
 
+#if UNITY_STANDALONE_WIN
         if (mouseEvent.isMouse && mouseEvent.type == EventType.MouseDown && mouseEvent.clickCount == 2)
         {
             mouseDoubleClick = true;
         }
+# elif UNITY_ANDROID
+
+# endif
+    }
+
+    /// <summary>
+    /// 注册相机指向或指出物体的事件
+    /// </summary>
+    /// <param name="zoomTargetEvent">相机指向或指出物体的事件</param>
+    public void SetZoomTargetEvent(ZoomTargetEvent zoomTargetEvent)
+    {
+        this.zoomTargetEvent = zoomTargetEvent;
+    }
+
+    /// <summary>
+    /// 获取相机指向或指出物体的事件
+    /// </summary>
+    /// <returns>相机指向或指出物体的事件</returns>
+    public ZoomTargetEvent GetZoomTargetEvent()
+    {
+        return this.zoomTargetEvent;
     }
 }
