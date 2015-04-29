@@ -1,69 +1,21 @@
-Base path: C:/Program Files (x86)/Unity4.6.1/Editor/Data
-Pipe name: \\.\pipe\UnityShaderCompiler-1-6272
+Base path: E:/HY Program/Unity/Editor/Data
+Pipe name: \\.\pipe\UnityShaderCompiler-1-7008
 Cmd: getPlatforms
 Cmd: preprocess
-  insize=1566 outsize=445 ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=1423 outsize=2387 kw= ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=1423 outsize=1786 kw= ok=1
+  insize=1637 outsize=467 ok=1
 Cmd: preprocess
-  insize=1230 outsize=398 ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=1134 outsize=1762 kw= ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=1134 outsize=998 kw= ok=1
+  insize=1292 outsize=421 ok=1
 Cmd: preprocess
-  insize=1065 outsize=395 ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=970 outsize=1542 kw= ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=970 outsize=770 kw= ok=1
+  insize=1122 outsize=420 ok=1
 Cmd: preprocess
-  insize=1194 outsize=526 ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=970 outsize=1542 kw= ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=970 outsize=770 kw= ok=1
+  insize=1255 outsize=553 ok=1
 Cmd: preprocess
-  insize=1019 outsize=1330 ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=4927 outsize=3208 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=4927 outsize=1567 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=2868 outsize=3476 kw=POINT ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=2868 outsize=1924 kw=POINT ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=2397 outsize=2078 kw= ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=2397 outsize=681 kw= ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=4609 outsize=3484 kw=LIGHTMAP_OFF DIRLIGHTMAP_OFF HDR_LIGHT_PREPASS_OFF ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=4609 outsize=1567 kw=LIGHTMAP_OFF DIRLIGHTMAP_OFF HDR_LIGHT_PREPASS_OFF ok=1
+  insize=1069 outsize=1351 ok=1
 Cmd: preprocess
-  insize=1567 outsize=440 ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=1429 outsize=2387 kw= ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=1429 outsize=1851 kw= ok=1
+  insize=1638 outsize=464 ok=1
 Cmd: preprocess
-  insize=1277 outsize=609 ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=970 outsize=1542 kw= ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=970 outsize=770 kw= ok=1
+  insize=1345 outsize=643 ok=1
 Cmd: preprocess
-  insize=1401 outsize=439 ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=1264 outsize=2225 kw= ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=1264 outsize=1623 kw= ok=1
+  insize=1467 outsize=463 ok=1
 Cmd: preprocess
-  insize=1229 outsize=402 ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=1128 outsize=1762 kw= ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=1128 outsize=933 kw= ok=1
+  insize=1291 outsize=426 ok=1

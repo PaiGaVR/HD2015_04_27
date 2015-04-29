@@ -39,17 +39,17 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files (x86)/Unity4.6.1/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>E:/HY Program/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files (x86)/Unity4.6.1/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>E:/HY Program/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\CameraOperated3D.cs" />
-<<<<<<< HEAD
      <Compile Include="Assets\Scripts\Disperse.cs" />
-=======
+     <Compile Include="Assets\Scripts\DispersionController.cs" />
+     <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
      <None Include="Assets\Resources\Shaders\MatCap_TextureAdd_Bumped.shader" />
      <None Include="Assets\Resources\Shaders\MatCap_TextureMult_Bumped.shader" />
      <None Include="Assets\Resources\Shaders\MatCap_Lit.shader" />
@@ -59,9 +59,8 @@
      <None Include="Assets\Resources\Shaders\MatCap_Plain_Additive.shader" />
      <None Include="Assets\Resources\Shaders\MatCap_TextureMult.shader" />
      <None Include="Assets\Resources\Shaders\MatCap_TextureAdd.shader" />
->>>>>>> origin/master
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Program Files (x86)/Unity4.6.1/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
+ <HintPath>E:/HY Program/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
