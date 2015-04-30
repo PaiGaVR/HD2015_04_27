@@ -86,7 +86,7 @@ public class Dispersion : MonoBehaviour,ZoomTargetEvent
         //throw new NotImplementedException();
     }
 
-    public void ZoonOutTarget(ref Transform parent)
+    public void ZoomOutTarget(ref Transform parent)
     {
         if (isDispersion)
         {
@@ -101,5 +101,6 @@ public class Dispersion : MonoBehaviour,ZoomTargetEvent
             isDispersion = false;
         }
         //throw new NotImplementedException();
+       
     }
 }
