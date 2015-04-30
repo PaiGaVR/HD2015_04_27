@@ -116,11 +116,6 @@ public class CameraOperated3D : MonoBehaviour
     private float gradualSpeed = 2f;
 
     /// <summary>
-    /// 用来辅助计算旋转惯性的变量
-    /// </summary>
-    private Vector2 gradualVector2;
-
-    /// <summary>
     /// 相机中的鼠标位置碰撞点
     /// </summary>
     private RaycastHit cameraHit;
@@ -149,8 +144,8 @@ public class CameraOperated3D : MonoBehaviour
         if (cameraRotatedFlag < 1f)
         {
             cameraRotatedFlag += Time.deltaTime * gradualSpeed;
-            gradualVector2 = Vector2.Lerp(gradualVector2, Vector2.zero, cameraRotatedFlag);
-            x += gradualVector2.x;
+            axisX = Mathf.Lerp(axisX, 0, cameraRotatedFlag);
+            x += axisX;
             RotatedCamera(transform, y, x, 0, distance, targetVector3);
         }
 
@@ -202,7 +197,6 @@ public class CameraOperated3D : MonoBehaviour
             if (Mathf.Abs(axisX) > 10f)
             {
                 cameraRotatedFlag = 0f;
-                gradualVector2 = new Vector2(axisX, 0f);
             }
         }
         // 场景的放大与缩小
