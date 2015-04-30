@@ -1,2 +1,4 @@
 4.6.1f1:1.9.8.0
 E:/HY Program/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll
+E:/HY Program/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/Editor/UnityEditor.UI.dll
+E:/HY Program/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll
