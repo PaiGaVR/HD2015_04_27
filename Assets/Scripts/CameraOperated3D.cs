@@ -168,7 +168,7 @@ public class CameraOperated3D : MonoBehaviour
         }
 
         // 鼠标双击事件
-        if (mouseDoubleClick)
+        if (Input.GetMouseButtonDown(0))
         {
             // 如果获取到碰撞物体，则相机目标物体指向该碰撞物体；否则，相机目标物体指向父物体
             if (Physics.Raycast(transform.camera.ScreenPointToRay(Input.mousePosition), out cameraHit))
