@@ -173,13 +173,13 @@ public class CameraOperated3D : MonoBehaviour
             if (Physics.Raycast(transform.camera.ScreenPointToRay(Input.mousePosition), out cameraHit))
             {
                 newTarget = cameraHit.transform;
-                zoomTargetEvent.ZoomInTarget(ref newTarget);
+                if (zoomTargetEvent != null) zoomTargetEvent.ZoomInTarget(ref newTarget);
                 cameraMoveFlag = 0f;
             }
             else if (newTarget.parent != null && !"Scane".Equals(newTarget.parent.name))
             {
                 newTarget = newTarget.parent;
-                zoomTargetEvent.ZoomOutTarget(ref newTarget);
+                if (zoomTargetEvent != null) zoomTargetEvent.ZoomOutTarget(ref newTarget);
                 cameraMoveFlag = 0f;
             }
             mouseDoubleClick = false;
