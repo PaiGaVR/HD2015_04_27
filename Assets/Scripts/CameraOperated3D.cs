@@ -17,6 +17,7 @@ public class CameraOperated3D : MonoBehaviour
     /// </summary>
     private ZoomTargetEvent zoomTargetEvent;
 
+   
     /// <summary>
     /// 目标点
     /// </summary>
@@ -174,12 +175,14 @@ public class CameraOperated3D : MonoBehaviour
             {
                 newTarget = cameraHit.transform;
                 if (zoomTargetEvent != null) zoomTargetEvent.ZoomInTarget(ref newTarget);
+                zoomTargetEvent.ZoomInTarget(ref newTarget);
                 cameraMoveFlag = 0f;
             }
             else if (newTarget.parent != null && !"Scane".Equals(newTarget.parent.name))
             {
                 newTarget = newTarget.parent;
                 if (zoomTargetEvent != null) zoomTargetEvent.ZoomOutTarget(ref newTarget);
+                zoomTargetEvent.ZoomOutTarget(ref newTarget);
                 cameraMoveFlag = 0f;
             }
             mouseDoubleClick = false;

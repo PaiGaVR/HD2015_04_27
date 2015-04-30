@@ -190,7 +190,7 @@
     <Compile Include="Assets\NGUI\Scripts\UI\UITooltip.cs" />
     <Compile Include="Assets\NGUI\Scripts\UI\UIViewport.cs" />
     <Compile Include="Assets\Scripts\CameraOperated3D.cs" />
-    <Compile Include="Assets\Scripts\Disperse.cs" />
+    <Compile Include="Assets\Scripts\Dispersion.cs" />
     <Compile Include="Assets\Scripts\ZoomTargetEvent.cs" />
   </ItemGroup>
   <ItemGroup>
