@@ -17,7 +17,7 @@ public class CameraOperated3D : MonoBehaviour
     /// </summary>
     private ZoomTargetEvent zoomTargetEvent;
 
-   
+
     /// <summary>
     /// 目标点
     /// </summary>
@@ -169,14 +169,30 @@ public class CameraOperated3D : MonoBehaviour
             if (Physics.Raycast(transform.camera.ScreenPointToRay(Input.mousePosition), out cameraHit))
             {
                 newTarget = cameraHit.transform;
+<<<<<<< HEAD
+
+
                 if (zoomTargetEvent != null) zoomTargetEvent.ZoomInTarget(ref newTarget);
+
+=======
+                if (zoomTargetEvent != null) zoomTargetEvent.ZoomInTarget(ref newTarget);
+>>>>>>> origin/master
                 zoomTargetEvent.ZoomInTarget(ref newTarget);
                 cameraMoveFlag = 0f;
             }
+
+
             else if (newTarget.parent != null && !"Scane".Equals(newTarget.parent.name))
             {
                 newTarget = newTarget.parent;
+<<<<<<< HEAD
+
+
                 if (zoomTargetEvent != null) zoomTargetEvent.ZoomOutTarget(ref newTarget);
+
+=======
+                if (zoomTargetEvent != null) zoomTargetEvent.ZoomOutTarget(ref newTarget);
+>>>>>>> origin/master
                 zoomTargetEvent.ZoomOutTarget(ref newTarget);
                 cameraMoveFlag = 0f;
             }
@@ -200,7 +216,7 @@ public class CameraOperated3D : MonoBehaviour
             }
         }
         // 场景的放大与缩小
-        else if(Input.GetAxis("Mouse ScrollWheel")!=0)
+        else if (Input.GetAxis("Mouse ScrollWheel") != 0)
         {
             normalDistance -= Input.GetAxis("Mouse ScrollWheel") * MouseWheelSensitivity;
             normalDistance = Mathf.Clamp(normalDistance, MouseZoomMin, MouseZoomMax);
