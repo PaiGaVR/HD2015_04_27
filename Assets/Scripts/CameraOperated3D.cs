@@ -17,7 +17,7 @@ public class CameraOperated3D : MonoBehaviour
     /// </summary>
     private ZoomTargetEvent zoomTargetEvent;
 
-   
+
     /// <summary>
     /// 目标点
     /// </summary>
@@ -116,11 +116,6 @@ public class CameraOperated3D : MonoBehaviour
     private float gradualSpeed = 2f;
 
     /// <summary>
-    /// 用来辅助计算旋转惯性的变量
-    /// </summary>
-    private Vector2 gradualVector2;
-
-    /// <summary>
     /// 相机中的鼠标位置碰撞点
     /// </summary>
     private RaycastHit cameraHit;
@@ -149,8 +144,8 @@ public class CameraOperated3D : MonoBehaviour
         if (cameraRotatedFlag < 1f)
         {
             cameraRotatedFlag += Time.deltaTime * gradualSpeed;
-            gradualVector2 = Vector2.Lerp(gradualVector2, Vector2.zero, cameraRotatedFlag);
-            x += gradualVector2.x;
+            axisX = Mathf.Lerp(axisX, 0, cameraRotatedFlag);
+            x += axisX;
             RotatedCamera(transform, y, x, 0, distance, targetVector3);
         }
 
@@ -168,24 +163,29 @@ public class CameraOperated3D : MonoBehaviour
         }
 
         // 鼠标双击事件
-        if (mouseDoubleClick)
+        if (Input.GetMouseButtonDown(0))
         {
             // 如果获取到碰撞物体，则相机目标物体指向该碰撞物体；否则，相机目标物体指向父物体
             if (Physics.Raycast(transform.camera.ScreenPointToRay(Input.mousePosition), out cameraHit))
             {
                 newTarget = cameraHit.transform;
 
+
+                if (zoomTargetEvent != null) zoomTargetEvent.ZoomInTarget(ref newTarget);
+
                 zoomTargetEvent.ZoomInTarget(ref newTarget);
-               
-              
                 cameraMoveFlag = 0f;
             }
+
+
             else if (newTarget.parent != null && !"Scane".Equals(newTarget.parent.name))
             {
                 newTarget = newTarget.parent;
 
-                zoomTargetEvent.ZoomOutTarget(ref newTarget);
 
+                if (zoomTargetEvent != null) zoomTargetEvent.ZoomOutTarget(ref newTarget);
+
+                zoomTargetEvent.ZoomOutTarget(ref newTarget);
                 cameraMoveFlag = 0f;
             }
             mouseDoubleClick = false;
@@ -205,11 +205,10 @@ public class CameraOperated3D : MonoBehaviour
             if (Mathf.Abs(axisX) > 10f)
             {
                 cameraRotatedFlag = 0f;
-                gradualVector2 = new Vector2(axisX, 0f);
             }
         }
         // 场景的放大与缩小
-        else if(Input.GetAxis("Mouse ScrollWheel")!=0)
+        else if (Input.GetAxis("Mouse ScrollWheel") != 0)
         {
             normalDistance -= Input.GetAxis("Mouse ScrollWheel") * MouseWheelSensitivity;
             normalDistance = Mathf.Clamp(normalDistance, MouseZoomMin, MouseZoomMax);
