@@ -31,7 +31,6 @@ public class Dispersion : MonoBehaviour,ZoomTargetEvent
 
             isDispersion = true;
         }
-        //throw new NotImplementedException();
     }
 
     public void ZoomOutTarget(ref Transform parent)
@@ -48,7 +47,5 @@ public class Dispersion : MonoBehaviour,ZoomTargetEvent
             }
             isDispersion = false;
         }
-        //throw new NotImplementedException();
-       
     }
 }
