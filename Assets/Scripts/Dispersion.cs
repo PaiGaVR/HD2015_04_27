@@ -6,7 +6,6 @@ public class Dispersion : MonoBehaviour, ZoomTargetEvent
 {
     private bool isDispersion = false;
     private int count = 0;
-    // Use this for initialization
 
     void Start()
     {
@@ -15,15 +14,10 @@ public class Dispersion : MonoBehaviour, ZoomTargetEvent
 
     public void ZoomInTarget(ref Transform target)
     {
-        try
-        {
-          
-            if (!isDispersion)
+          if (!isDispersion)
             {
-              
                 if (target.parent.childCount < 5)
                 {
-               
                     foreach (Transform trans in target.parent)
                     {
                         count++;
@@ -47,17 +41,10 @@ public class Dispersion : MonoBehaviour, ZoomTargetEvent
                 count = 0;
                 isDispersion = true;
             }
-        }
-        catch
-        {
-            throw new NotImplementedException();
-        }
     }
 
     public void ZoomOutTarget(ref Transform parent)
     {
-        try
-        {
             if (isDispersion)
             {
                 if (parent.childCount < 5)
@@ -82,10 +69,5 @@ public class Dispersion : MonoBehaviour, ZoomTargetEvent
                 count = 0;
                 isDispersion = false;
             }
-        }
-        catch
-        {
-            throw new NotImplementedException();
-        }
     }
 }
