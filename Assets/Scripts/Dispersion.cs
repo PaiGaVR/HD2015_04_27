@@ -48,13 +48,10 @@ public class Dispersion : MonoBehaviour, ZoomTargetEvent
                 isDispersion = true;
             }
         }
-<<<<<<< HEAD
         catch
         {
             throw new NotImplementedException();
         }
-=======
->>>>>>> origin/master
     }
 
     public void ZoomOutTarget(ref Transform parent)
@@ -86,12 +83,9 @@ public class Dispersion : MonoBehaviour, ZoomTargetEvent
                 isDispersion = false;
             }
         }
-<<<<<<< HEAD
         catch
         {
             throw new NotImplementedException();
         }
-=======
->>>>>>> origin/master
     }
 }
