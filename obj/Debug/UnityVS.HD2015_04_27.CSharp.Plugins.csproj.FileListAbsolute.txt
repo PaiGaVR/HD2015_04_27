@@ -1,0 +1,10 @@
+E:\edit_space\github\HD2015_04_27\Temp\UnityVS_bin\Debug\Assembly-CSharp-firstpass.dll
+E:\edit_space\github\HD2015_04_27\Temp\UnityVS_bin\Debug\Assembly-CSharp-firstpass.pdb
+E:\edit_space\github\HD2015_04_27\Temp\UnityVS_bin\Debug\UnityEditor.dll
+E:\edit_space\github\HD2015_04_27\Temp\UnityVS_bin\Debug\UnityEngine.dll
+E:\edit_space\github\HD2015_04_27\Temp\UnityVS_bin\Debug\UnityEngine.UI.dll
+E:\edit_space\github\HD2015_04_27\Temp\UnityVS_bin\Debug\UnityEngine.xml
+E:\edit_space\github\HD2015_04_27\Temp\UnityVS_bin\Debug\UnityEditor.xml
+E:\edit_space\github\HD2015_04_27\Temp\UnityVS_bin\Debug\UnityEngine.UI.xml
+E:\edit_space\github\HD2015_04_27\obj\Debug\Assembly-CSharp-firstpass.dll
+E:\edit_space\github\HD2015_04_27\obj\Debug\Assembly-CSharp-firstpass.pdb
