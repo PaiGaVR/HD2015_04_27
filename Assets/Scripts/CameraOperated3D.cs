@@ -17,7 +17,6 @@ public class CameraOperated3D : MonoBehaviour
     /// </summary>
     private ZoomTargetEvent zoomTargetEvent;
 
-
     /// <summary>
     /// 目标点
     /// </summary>
@@ -169,16 +168,6 @@ public class CameraOperated3D : MonoBehaviour
             if (Physics.Raycast(transform.camera.ScreenPointToRay(Input.mousePosition), out cameraHit))
             {
                 newTarget = cameraHit.transform;
-
-                if (zoomTargetEvent != null) zoomTargetEvent.ZoomInTarget(ref newTarget);
-
-
-                if (zoomTargetEvent != null) zoomTargetEvent.ZoomInTarget(ref newTarget);
-
-
-
-                if (zoomTargetEvent != null) zoomTargetEvent.ZoomInTarget(ref newTarget);
-
                 if (zoomTargetEvent != null) zoomTargetEvent.ZoomInTarget(ref newTarget);
                 zoomTargetEvent.ZoomInTarget(ref newTarget);
                 cameraMoveFlag = 0f;
@@ -188,13 +177,6 @@ public class CameraOperated3D : MonoBehaviour
             else if (newTarget.parent != null && !"Scane".Equals(newTarget.parent.name))
             {
                 newTarget = newTarget.parent;
-
-
-                if (zoomTargetEvent != null) zoomTargetEvent.ZoomOutTarget(ref newTarget);
-
-
-                if (zoomTargetEvent != null) zoomTargetEvent.ZoomOutTarget(ref newTarget);
-
                 if (zoomTargetEvent != null) zoomTargetEvent.ZoomOutTarget(ref newTarget);
                 zoomTargetEvent.ZoomOutTarget(ref newTarget);
                 cameraMoveFlag = 0f;
@@ -206,9 +188,9 @@ public class CameraOperated3D : MonoBehaviour
         if (Input.GetMouseButton(1))
         {
             axisX = (Input.GetAxis("Mouse X") * X_SPEED * 0.02f);
+
             x += axisX;
             y -= (Input.GetAxis("Mouse Y") * Y_SPEED * 0.02f);
-
             y = ClampAngle(y, yMinLimit, yMaxLimit);
 
             RotatedCamera(transform, y, x, 0, distance, targetVector3);
